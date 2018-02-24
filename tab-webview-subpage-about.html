@@ -8,24 +8,258 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 		<link rel="stylesheet" href="css/mui.min.css">
+		<script type="text/javascript" src="js/lib/flexible.js"></script>
+		<script type="text/javascript" src="js/lib/flexible_css.js"></script>
 		<style>
 			html,body {
 				background-color: #efeff4;
+			}
+			ul,li{
+				list-style: none;
+				margin: 0;
+				padding: 0;
 			}
 			.title{
 				margin: 20px 15px 10px;
 				color: #6d6d72;
 				font-size: 15px;
 			}
+			#slider{
+				height: 5.666666rem;
+			}
+			.ystt_box{
+				/*幼师头条*/
+				background: #fff;
+			}
+			.rmfy_box{
+				/*热门房源*/
+				background: #f0f0f0;
+				padding-bottom: 0.533333rem;
+			}
+			.zxsj{
+				/*最新数据*/
+				background: #fff;
+			}
+			.tit{
+				position: relative;
+				width: 100%;
+				height: 1.133333rem;
+				line-height: 1.133333rem;
+				font-size: 0.4rem;
+				padding-left: 0.533333rem;
+				border: 1px solid pink;
+			}
+			.tit::before{
+				position: absolute;
+				top: 50%;
+				left: 0.266666rem;
+				margin-top: -0.186666rem;
+				content: "";
+				display: block;
+				width: 0.066666rem;
+				height: 0.373333rem;
+				background: #2b70d8;
+			}
+			.tab_box{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				height: 1.466666rem;
+				background: #fff;
+			}
+			.tab_box p{
+				width: 3.266666rem;
+				height: 0.773333rem;
+				line-height: 0.773333rem;
+				background: #2b70d8;
+				border-radius: 0.066666rem;
+				text-align: center;
+				color: #fff;
+			}
+			
+			.grab{
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				background: #fff;
+				overflow-y: hidden;
+				overflow-x: auto;
+				white-space: nowrap;
+				padding-bottom: 0.133333rem;
+				padding-left: 0.266666rem;
+			}
+		    .grab .img{
+		    	width: 100%;
+		    	height: 2.0rem;
+		    	overflow: hidden;
+		    }
+		    .grab .img img{
+		    	width: 100%;
+		    }
+		    .grab .title{
+		    	font-size: 0.333333rem;
+				color: #666666;
+				overflow: hidden;
+			    text-overflow: ellipsis;
+			    white-space: nowrap;
+		    }
+		    .grab li{
+		    	width: 3.066666rem;
+		    	margin: 0 0.133333rem;
+		    	height: 3.6rem;
+		    	border: 1px solid red;
+				display: inline-block;
+		    }
+		    .fypic{
+		    	display: flex;
+		    	flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+		    	height: 6.3rem;
+		    	border: 1px solid #6641E2;
+		    }
+		    .fypic li{
+		    	width: 4.466666rem;
+		    	height: 3rem;
+		    	overflow: hidden;
+		    	margin-bottom: 0.266666rem;
+		    }
+		    .fypic li img{
+		    	width: 100%;
+		    }
+		    .fypic li:nth-child(odd){
+		    	margin-right: 0.266666rem;
+		    }
 		</style>
 	</head>
 	<body>
 		<div class="mui-content">
-			<div class="title">
-				<p>这是webview模式选项卡的第1个子页面</p>
-				<p>何谓webview模式？其实就是每个选项卡内容都是一个独立的webview，彼此之间互相独立、互不影响；
-					对于较为复杂的业务系统，推荐使用该模式。</p>
-				<p>基于webview模式的选项卡，支持原生加速的下拉刷新，点击第二个选项卡（“消息”），切换选项卡，体验下拉刷新；</p>
+			<!--轮播-->
+			<div id="slider" class="mui-slider" >
+			  <div class="mui-slider-group mui-slider-loop">
+			    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+			    <div class="mui-slider-item mui-slider-item-duplicate">
+			      <a href="#">
+			        <img src="http://placehold.it/400x300">
+			      </a>
+			    </div>
+			    <!-- 第一张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			        <img src="http://placehold.it/400x300">
+			      </a>
+			    </div>
+			    <!-- 第二张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			        <img src="http://placehold.it/400x300">
+			      </a>
+			    </div>
+			    <!-- 第三张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			        <img src="http://placehold.it/400x300">
+			      </a>
+			    </div>
+			    <!-- 第四张 -->
+			    <div class="mui-slider-item">
+			      <a href="#">
+			        <img src="http://placehold.it/400x300">
+			      </a>
+			    </div>
+			    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+			    <div class="mui-slider-item mui-slider-item-duplicate">
+			      <a href="#">
+			        <img src="http://placehold.it/400x300">
+			      </a>
+			    </div>
+			  </div>
+			  <div class="mui-slider-indicator">
+			    <div class="mui-indicator mui-active"></div>
+			    <div class="mui-indicator"></div>
+			    <div class="mui-indicator"></div>
+			    <div class="mui-indicator"></div>
+			  </div>
+			</div>
+			<!--幼狮头条-->
+			<div class="ystt_box">
+				<div class="tit">幼狮头条</div>
+				<div style="width: 10rem;overflow-x: scroll;overflow-y: hidden;">
+					<ul class="grab">
+				    	<li>
+				    		<a href="#">
+				    			<div class="img">
+				    				<img src="http://placehold.it/400x300" alt="">
+				    			</div>
+				    			<div class="title">123</div>
+				    		</a>
+				    	</li>
+				    	<li>
+				    		<a href="#">
+				    			<div class="img">
+				    				<img src="http://placehold.it/400x300" alt="">
+				    			</div>
+				    			<div class="title">123</div>
+				    		</a>
+				    	</li>
+				    	<li>
+				    		<a href="#">
+				    			<div class="img">
+				    				<img src="http://placehold.it/400x300" alt="">
+				    			</div>
+				    			<div class="title">123</div>
+				    		</a>
+				    	</li>
+				    	<li>
+				    		<a href="#">
+				    			<div class="img">
+				    				<img src="http://placehold.it/400x300" alt="">
+				    			</div>
+				    			<div class="title">123</div>
+				    		</a>
+				    	</li>
+				    	<li>
+				    		<a href="#">
+				    			<div class="img">
+				    				<img src="http://placehold.it/400x300" alt="">
+				    			</div>
+				    			<div class="title">123</div>
+				    		</a>
+				    	</li>
+				    	<li style="visibility: hidden;width: 0;margin: 0.133333rem;"></li>
+				    </ul>
+				</div>
+			</div>
+			<!--tab切换-->
+			<div class="tab_box">
+			   <p>我要找房</p>
+			   <p style="margin-left: 0.4rem;">业主委托</p>
+			</div>
+			<div class="rmfy_box">
+				<!--热门房源-->
+				<div class="tit">热门房源</div>
+				<ul class="fypic">
+					<li>
+						<img src="http://47.92.145.21:81/upload/2017-08-27/1aa56c6ff7a0f6d29ab34dd2ed5f6e39.png" alt="" />
+					</li>
+					<li>
+						<img src="http://47.92.145.21:81/upload/2017-09-07/a2f4efd1c7f34808b23d718a465b1d93.png" alt="" />
+					</li>
+					<li>
+						<img src="http://47.92.145.21:81/upload/2017-09-07/65fc9eec2699652210b4872c3dd008c5.png" alt="" />
+					</li>
+					<li>
+						<img src="http://47.92.145.21:81/upload/2017-08-27/1aa56c6ff7a0f6d29ab34dd2ed5f6e39.png" alt="" />
+					</li>
+				</ul>
+			</div>
+			<div class="zxsj">
+				<!--最新数据-->
+				<div class="tit">最新数据</div>
+				<div style="height: 2.733333rem;">
+					
+				</div>
 			</div>
 		</div>
 	</body>
